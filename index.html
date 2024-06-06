@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MET rank vs branch</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles for the navbar */
+        body {
+            background-color: #1e1e1e;
+            /* Dark background color */
+            color: #ffffff;
+            /* White text color */
+        }
+
+        .navbar-custom {
+            background-color: #343a40;
+            /* Dark navbar color */
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-nav .nav-link {
+            color: #ffffff;
+            /* White text color */
+        }
+
+        .navbar-custom .navbar-nav .nav-link:hover {
+            color: #a8a8a8;
+            /* Light gray text color on hover */
+        }
+
+        .red-text {
+            color: red;
+            /* Red text color */
+        }
+
+        .card-custom {
+            background-color: #343a40;
+            /* Dark card background color */
+            color: #ffffff;
+            /* White text color */
+        }
+
+        .green-text {
+            color: #28a745 !important;
+            /* Green text color */
+        }
+
+        .red-text {
+            color: #dc3545 !important;
+            /* Red text color */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand mr-auto" href="#">MET Rank vs Branch</a>
+            <!-- Updated button with additional text below it -->
+            <div class="ml-auto">
+                <button class="btn btn-success"
+                    onclick="location.href='https://www.reddit.com/r/CuriousAspirants/'">Join
+                    r/CuriousAspirants</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-3 text-center">
+        <h2 class="red-text">Ranking data is based on 2023 round 3 data</h2>
+        <h2 class="red-text" style="font-size: large;">May not be 100% accurate for this year</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter your rank" id="rankInput"
+                    style="color: #1e1e1e;">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="checkEligibility()">Submit</button>
+        </form>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="card card-custom" id="velloreCard">
+                    <div class="card-body">
+                        <h5 class="card-title">Manipal Manipal</h5>
+                        <ul class="list-unstyled">
+                            <li id="course1">CCE</li>
+                            <li id="course2">CSE</li>
+                            <li id="course3">CSE + AIML</li>
+                            <li id="course4">Data Science & Engg</li>
+                            <li id="course5">IT</li>
+                            <li id="course6">CSE + Financial Tech</li>
+                            <li id="course7">MnC</li>
+                            <li id="course8">Biomedical</li>
+                            <li id="course9">EEE</li>
+                            <li id="course10">ECE</li>
+                            <li id="course11">E&I</li>
+                            <li id="course12">Cyber Physical Systems</li>
+                            <li id="course13">EE + VLSI</li>
+                            <li id="course14">Aeronautical Engg</li>
+                            <li id="course15">Automobile Engg</li>
+                            <li id="course16">Industrial Engg</li>
+                            <li id="course17">Mechanical Engg</li>
+                            <li id="course18">Mechatronics</li>
+                            <li id="course19">BioTech</li>
+                            <li id="course20">Chemical Engg</li>
+                            <li id="course21">Civil Engg</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-custom" id="chennaiCard">
+                    <div class="card-body">
+                        <h5 class="card-title">Manipal Bangalore</h5>
+                        <ul class="list-unstyled">
+                            <li id="course22">CSE</li>
+                            <li id="course23">CSE + AI</li>
+                            <li id="course24">CSE + Cyber Security</li>
+                            <li id="course25">IT</li>
+                            <li id="course26">CSE + Data Science</li>
+                            <li id="course27">ECE</li>
+                            <li id="course28">EC</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-custom" id="andhraCard">
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <h5 class="card-title">Manipal Jaipur</h5>
+                            <li id="course29">CCE</li>
+                            <li id="course30">CSE</li>
+                            <li id="course31">CSE + AIML</li>
+                            <li id="course32">IT</li>
+                            <li id="course33">CSE + Data Science</li>
+                            <li id="course34">CSE + IOT</li>
+                            <li id="course35">CSE + Bio Science</li>
+                            <li id="course36">EEE</li>
+                            <li id="course37">ECE</li>
+                            <li id="course38">EC</li>
+                            <li id="course39">EE + VLSI</li>
+                            <li id="course40">Automobile Engg</li>
+                            <li id="course41">Mechanical Engg</li>
+                            <li id="course42">Mechatronics</li>
+                            <li id="course43">BioTech</li>
+                            <li id="course44">Chemical Engg</li>
+                            <li id="course45">Civil Engg</li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function checkEligibility() {
+            var rank = document.getElementById('rankInput').value;
+
+            var cutoffs = {
+                'course1': 6360,
+                'course2': 1602,
+                'course3': 2382,
+                'course4': 5794,
+                'course5': 4765,
+                'course6': 3737,
+                'course7': 6771,
+                'course8': 47120,
+                'course9': 20997,
+                'course10': 8820,
+                'course11': 34087,
+                'course12': 23818,
+                'course13': 13725,
+                'course14': 28850,
+                'course15': 46461,
+                'course16': 45140,
+                'course17': 47184,
+                'course18': 38247,
+                'course19': 30017,
+                'course20': 48465,
+                'course21': 47893,
+                'course22': 8888,
+                'course23': 11738,
+                'course24': 17427,
+                'course25': 20167,
+                'course26': 17587,
+                'course27': 26764,
+                'course28': 29025,
+                'course29': 46694,
+                'course30': 17794,
+                'course31': 24500,
+                'course32': 47833,
+                'course33': 48250,
+                'course34': 46707,
+                'course35': 43634,
+                'course36': 45001,
+                'course37': 48266,
+                'course38': 34935,
+                'course39': 27258,
+                'course40': 48334,
+                'course41': 46177,
+                'course42': 42268,
+                'course43': 46006,
+                'course44': 42594,
+                'course45': 41796
+            };
+
+            for (var course in cutoffs) {
+                var element = document.getElementById(course);
+                if (parseInt(rank) <= cutoffs[course]) {
+                    element.classList.remove('red-text');
+                    element.classList.add('green-text');
+                } else {
+                    element.classList.remove('green-text');
+                    element.classList.add('red-text');
+                }
+            }
+        }
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };        
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
+
+</body>
+
+</html>
